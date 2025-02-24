@@ -1,13 +1,38 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Todo App</title>
-    </head>
-    <body class="bg-neutral-900 text-white">
-        <h1 class="text-3xl font-bold">Todo App</h1>
-        <script type="module" src="/src/scripts/main.ts"></script>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+</head>
+
+<body class="bg-neutral-900 text-white">
+    <main class="grid min-h-screen place-items-center">
+        <div class="flex flex-col gap-4">
+            <form action="POST" class="flex items-center gap-4">
+                <input type="text" id="todo-input" placeholder="Write todo here.." autocomplete="off" class="h-12 rounded-sm border-2 border-indigo-500 px-4
+                font-medium outline-0 focus:border-indigo-300 min-w-80" />
+                <button id="add-todo"
+                    class="h-12 cursor-pointer rounded-sm bg-indigo-600 px-4 duration-200 hover:bg-indigo-500">ADD</button>
+            </form>
+            <ul id="todo-list">
+                <li class="flex items-center gap-3">
+                    <input type="checkbox" id="todo-1" class="peer
+                    accent-indigo-500 cursor-pointer hover:accent-indigo-400
+                    h-4 w-4" />
+                    <label for="todo-1" class="peer-checked:line-through cursor-pointer">Recharge Mobile Data.</label>
+                    <button id="delete-btn" class="ms-auto leading-0
+                    cursor-pointer hover:text-red-500 duration-300">
+                        <iconify-icon icon="material-symbols:delete-rounded" width="22" height="22"></iconify-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script type="module" src="/src/scripts/main.ts"></script>
+</body>
+
 </html>
